@@ -1,0 +1,28 @@
+<%= form_with(model: firma) do |form| %>
+  <% if firma.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(firma.errors.count, "error") %> prohibited this firma from being saved:</h2>
+
+      <ul>
+        <% firma.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre, class: 'form-control form-control-lg' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :saludo, style: "display: block" %>
+    <%= form.text_area :saludo, class: 'form-control form-control-lg' %>
+  </div>
+
+  <div class="form-group mt-3">
+    <%= form.submit class: "btn btn-primary btn-lg", value: "Crear Firma" %> 
+    <%= link_to "Volver al libro de visitas", firmas_path, class: "btn btn-outline-primary btn-lg" %>
+  </div>
+<% end %>

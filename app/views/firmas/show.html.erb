@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="card shadow mb-3">
+  <div class="card-body">
+    <%= render @firma %>
+  </div>
+
+<div class="mt-1">
+  <%= link_to "Editar esta firma", edit_firma_path(@firma), class:"btn btn-warning" %>
+  <%= link_to "Volver al libro de visitas", firmas_path, class:"btn btn-outline-primary" %>
+
+  <%= button_to "Eliminar esta firma", @firma, method: :delete, class: "btn btn-danger mt-3 mb-3" %>
+</div>
+</div>

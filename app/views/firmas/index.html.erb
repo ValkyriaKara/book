@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+<div class="col-lg-8 mx-auto">
+  <h1>Libro de visitas</h1>
+  <%= link_to "Nueva firma", new_firma_path, class: "btn btn-primary btn-lg mb-3" %>
+  <div id="firmas">
+    <% @firmas.each do |firma| %>
+    <div class="card shadow mb-3">
+      <div class="card-body">
+        <%= render firma %>
+        <p>
+          <%= link_to "Ver esta firma", firma, class: "btn btn-primary" %>
+        </p>
+      </div>
+    </div>
+     
+    <% end %>
+  </div>
+</div>
+
+
+
